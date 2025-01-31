@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>信件飛出特效</title>
+<style>
+/* CSS 樣式 */
+#letter {
+  position: absolute;
+  top: 50%;
+  left: 20%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  background-image: url("letter.png"); /* 替換成您的信件圖示 */
+  background-size: cover;
+  cursor: pointer;
+  transition: transform 1s ease-in-out; /* 信件飛出動畫 */
+}
+
+#content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-radius: 5px;
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+  transition: opacity 1s ease-in-out, height 1s ease-in-out; /* 內容展開動畫 */
+}
+
+#letter.fly {
+  transform: translate(150%, -50%); /* 信件飛到右邊 */
+}
+
+#content.show {
+  opacity: 1;
+  height: auto; /* 內容高度自動調整 */
+}
+</style>
+</head>
+<body>
+
+<div id="letter"></div>
+
+<div id="content">
+  <h1>Hello!</h1>
+  <p>這是一封信件的內容。</p>
+</div>
+
+<script>
+// JavaScript 行為
+const letter = document.getElementById("letter");
+const content = document.getElementById("content");
+
+letter.addEventListener("click", () => {
+  letter.classList.add("fly"); // 觸發信件飛出動畫
+
+  setTimeout(() => {
+    content.classList.add("show"); // 延遲後顯示內容
+  }, 1000); // 延遲 1 秒
+});
+</script>
+
+</body>
+</html>
