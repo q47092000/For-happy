@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>This is My Letter For my Happy Wife</title>
+<style>
+/* CSS 樣式 */
+#letter {
+  position: absolute;
+  top: 50%;
+  left: 20%;
+  transform: translateY(-50%);
+  width: 500px;
+  height: 500px;
+  background-image: url("happyb.gif"); /* 替換成您的信件圖示 */
+  background-size: cover;
+  cursor: pointer;
+  transition: transform 1s ease-in-out; /* 信件飛出動畫 */
+}
+
+#content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-radius: 5px;
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+  transition: opacity 1s ease-in-out, height 1s ease-in-out; /* 內容展開動畫 */
+}
+
+#letter.fly {
+  transform: translate(150%, -50%); /* 信件飛到右邊 */
+}
+
+#content.show {
+  opacity: 1;
+  height: auto; /* 內容高度自動調整 */
+}
+</style>
+</head>
+<body>
+
+<div id="letter"></div>
+
+<div id="content">
+  <br></br>
+  <h1>For my Happy Wife</h1>
+  <P>Before we begin, I want to thank you because you make every day wonderful for me. </P>
+  <P>Sometimes, I may not be very smart, especially if you suddenly ask me how my feelings </P>
+  <P>for you have changed over time. I worry that if my answer is too simple, you might think </P>
+  <P>I’m being perfunctory. And if I answer too quickly, it might seem careless. So, I take a </P>
+  <P>little time to think about how to respond properly. Thank you for patiently giving me that </P>
+  <P>time. </P>
+<br></br>
+<P>When I first got to know you, I witnessed our mutual craziness. But over these past days, </P><P>you’ve shown me your adorable side. 💕 For example, sometimes a part of you blushes </P><P>or feels shy 😍, but another part of you really wants to do it anyway. 😈 I love both sides </P><P>of you. Even though you sometimes worry about many things, I believe it’s because you </P><P>think a lot. There are times when you consider things I wouldn’t have thought of, and I’m </P><P>really happy that you’re willing to share your worries with me. But you can always rest </P><P>assured—I will help you. And when you’re hesitant, I’ll decisively give you advice </P>
+<P> (even though the gift issue has been dragging on for a while 😂). </P>
+<br></br>
+
+<P>I know we both have our busy times, but no matter how busy I am, I will always think of </P><P>you. And when I’m caught up in work, I know that there’s someone out there thinking </P><P>about me, worrying about me, and silently supporting me. I’m so grateful to have such a </P><P>person in my life. Sometimes, I really wish I could be like a student again—fearlessly </P><P>running toward you, leaving everything behind to stay with you 24/7, or even flying </P><P>straight to Poland. :) But if I did that so soon, I think I might scare you away! 😂</P>
+<br></br>
+
+<P>By the way, do you like necklaces or earrings more? In my dream, I want to be by your </P><P>side every day, helping you fix your hair and dress up. :) (P.S. If I accidentally make you </P><P>look like a witch, don’t blame me! 🧙‍♀️ But don’t worry, I’ll be a wizard with you!) </P>
+
+</div>
+
+<script>
+// JavaScript 行為
+const letter = document.getElementById("letter");
+const content = document.getElementById("content");
+
+letter.addEventListener("click", () => {
+  letter.classList.add("fly"); // 觸發信件飛出動畫
+
+  setTimeout(() => {
+    content.classList.add("show"); // 延遲後顯示內容
+  }, 1000); // 延遲 1 秒
+});
+</script>
+
+</body>
+</html>
